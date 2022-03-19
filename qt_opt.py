@@ -31,7 +31,12 @@ from machina.utils import set_device, measure
 
 from simple_net import QNet
 
+import torch.multiprocessing as mp
+
 if __name__ == '__main__':
+    mp.set_start_method("spawn")
+    print("yeeeees")
+    
     parser = argparse.ArgumentParser()
     parser.add_argument('--log', type=str, default='garbage',
                         help='Directory name of log.')
